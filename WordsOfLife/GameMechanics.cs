@@ -132,24 +132,24 @@ namespace WordsOfLife
             // home row
             levelWords[i] = new string[] {"a", "s", "d", "f", "g",
                                             "h", "j", "k", "l", ";"};
-            level.Add(new Level(levelWords[i], 30, 1500));
+            level.Add(new Level(levelWords[i], 3, 1500));
 
             i++;
             levelWords[i] = new string[] {  "a", "s", "d", "f", "g",
                                             "h", "j", "k", "l", ";"};
-            level.Add(new Level(levelWords[i], 30, 800));
+            level.Add(new Level(levelWords[i], 3, 800));
 
 
             // qwerty row
             i++;
             levelWords[i] = new string[] {  "q", "w", "e", "r", "t",
                                             "y", "u", "i", "o", "p"};
-            level.Add(new Level(levelWords[i], 30, 1500));
+            level.Add(new Level(levelWords[i], 3, 1500));
 
             i++;
             levelWords[i] = new string[] {  "q", "w", "e", "r", "t",
                                             "y", "u", "i", "o", "p"};
-            level.Add(new Level(levelWords[i], 30, 800));
+            level.Add(new Level(levelWords[i], 3, 800));
 
 
 
@@ -157,24 +157,24 @@ namespace WordsOfLife
             i++;
             levelWords[i] = new string[] {  "z", "x", "c", "v", "b",
                                             "n", "m", ",", ".", "/"};
-            level.Add(new Level(levelWords[i], 30, 1500));
+            level.Add(new Level(levelWords[i], 3, 1500));
 
             i++;
             levelWords[i] = new string[] {  "z", "x", "c", "v", "b",
                                             "n", "m", ",", ".", "/"};
-            level.Add(new Level(levelWords[i], 30, 800));
+            level.Add(new Level(levelWords[i], 3, 800));
 
 
             // 12345 row
             i++;
             levelWords[i] = new string[] {  "1", "2", "3", "4", "5",
                                             "6", "7", "8", "9", "0"};
-            level.Add(new Level(levelWords[i], 10, 1500));
+            level.Add(new Level(levelWords[i], 1, 1500));
 
             i++;
             levelWords[i] = new string[] {  "1", "2", "3", "4", "5",
                                             "6", "7", "8", "9", "0"};
-            level.Add(new Level(levelWords[i], 10, 800));
+            level.Add(new Level(levelWords[i], 1, 800));
 
 
             // home row words
@@ -184,7 +184,7 @@ namespace WordsOfLife
                                             "lad", "jak;", ";;ll", ";hal",
                                             "had","fad", "kl;", "fjk",
                                             "sad", "glad", "fall", "gal"};
-            level.Add(new Level(levelWords[i], 30, 3000));
+            level.Add(new Level(levelWords[i], 3, 3000));
 
             i++;
             levelWords[i] = new string[] {  "asdfg", "hjkl;", "gaff", "half",
@@ -192,7 +192,7 @@ namespace WordsOfLife
                                             "lads", "jak;", ";;ll", ";hal",
                                             "had","fads", "kl;", "f;jk",
                                             "slad", "glad", "fall", "gals"};
-            level.Add(new Level(levelWords[i], 30, 1800));
+            level.Add(new Level(levelWords[i], 3, 1800));
 
 
             // qwert row words
@@ -202,7 +202,7 @@ namespace WordsOfLife
                                             "quit", "weep", "wipe", "rope",
                                             "tip","out", "turp", "poor",
                                             "err", "true", "ripe", "pope"};
-            level.Add(new Level(levelWords[i], 30, 3000));
+            level.Add(new Level(levelWords[i], 3, 3000));
 
             i++;
             levelWords[i] = new string[] {  "qwert", "yuiop", "putt", "tupp",
@@ -210,7 +210,7 @@ namespace WordsOfLife
                                             "quit", "weep", "wipe", "rope",
                                             "tipt","out", "turp", "poor",
                                             "errt", "true", "ript", "pipe"};
-            level.Add(new Level(levelWords[i], 30, 1800));
+            level.Add(new Level(levelWords[i], 3, 1800));
 
 
 
@@ -220,14 +220,14 @@ namespace WordsOfLife
                                             "nxc", "vmn", "z,.", ".,c",
                                             "bv.n", "mx,", "/cv", "cc,",
                                             "bxm", "xxz", "zz.", "v,m"};
-            level.Add(new Level(levelWords[i], 30, 3000));
+            level.Add(new Level(levelWords[i], 3, 3000));
 
             i++;
             levelWords[i] = new string[] {  "zxcvb", "nm,./", "bnmv",
                                             "nx.c", "vmn", "z,.", ".,c",
                                             "bv.n", "mx,.", "/cv", "cc,/",
                                             "cbxm","xxz/", "/zz.", "v,m"};
-            level.Add(new Level(levelWords[i], 30, 1800));
+            level.Add(new Level(levelWords[i], 3, 1800));
 
 
 
@@ -237,14 +237,14 @@ namespace WordsOfLife
                                             "876", "123", "934", "007", "653",
                                             "037", "892", "246", "768", "120",
                                             "029","715", "420"};
-            level.Add(new Level(levelWords[i], 30, 3000));
+            level.Add(new Level(levelWords[i], 3, 3000));
 
             i++;
             levelWords[i] = new string[] {  "12345", "67890", "929", "002",
                                             "876", "123", "934", "007", "653",
                                             "037", "892", "246", "768", "120",
                                             "029","715", "420"};
-            level.Add(new Level(levelWords[i], 30, 3000));
+            level.Add(new Level(levelWords[i], 3, 3000));
 
 
             // Ensure that the right number of levels have been initialised
