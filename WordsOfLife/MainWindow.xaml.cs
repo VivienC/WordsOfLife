@@ -54,6 +54,9 @@ namespace WpfApplication1
         }
     }
 
+    // Class to convert from the level number to a string saying
+    // "Level: " and the number. GameMechanics level is zero-based, 
+    // so add or subtract 1 as appropriate.
     [ValueConversion(typeof(int), typeof(String))]
     public class intToLevelStringConverter : IValueConverter
     {
@@ -70,7 +73,7 @@ namespace WpfApplication1
             // Convert from string to integer
             int result = 0;
             int.TryParse(valueString, out result);
-            return result;
+            return (result-1);
         }
     }
 }
