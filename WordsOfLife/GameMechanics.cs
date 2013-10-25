@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Diagnostics;
+using System.ComponentModel;
 
 namespace WordsOfLife
 {
@@ -25,19 +26,34 @@ namespace WordsOfLife
 
     // Keeps control of the words in play and user data
     // such as the score and current level
-    class GameMechanics
+    class GameMechanics : INotifyPropertyChanged
     {
         // Game mechanics
         List<Level> level = new List<Level>();
         List<string> currentGameWords = new List<string>();
         Random randomNum = new Random();
 
+        private int _currentLevel;
+        public int currentLevel 
+        {
+            get
+            {
+                return _currentLevel;
+            }
+            private set
+            {
+                _currentLevel = value;
+                OnPropertyChanged("currentLevel");
+            }
+        }
+        
         public int userScore { get; private set; }
-
-        public int currentLevel { get; private set; }
         public int requiredScore { get; private set; }
         public bool updateLevelAndRequiredScore { get; private set; }
         public int levelSpeed { get; private set; }
+
+        // Declare an event
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public GameMechanics()
         {
@@ -112,6 +128,16 @@ namespace WordsOfLife
                 userScore = 0;
             }
 
+        }
+
+        // Create the OnPropertyChanged method to raise the event 
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
         }
 
         // Setup the words for each of the levels
