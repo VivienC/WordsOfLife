@@ -27,6 +27,7 @@ namespace WpfApplication1
             InitializeComponent();
 
             wordLabel.Content = gameMechanics.getWord();
+            userInput.Focus();
         }
 
         private void userInputEvent(object sender, TextChangedEventArgs e)
