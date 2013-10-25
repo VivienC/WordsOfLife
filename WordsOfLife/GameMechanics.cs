@@ -68,7 +68,7 @@ namespace WordsOfLife
 
         public string getWord()
         {
-            // Random pick a word fromthe current level's list
+            // Randomly pick a word fromthe current level's list
             currentGameWords.Add(level[currentLevel].levelWords[randomNum.Next(level[currentLevel].numOfWords)]);
             return currentGameWords.ElementAt(currentGameWords.Count - 1);
 
@@ -80,28 +80,17 @@ namespace WordsOfLife
             updateLevelAndRequiredScore = false;
 
             // Check if the user has typed a word that matches the current level's word list
-            if (currentGameWords.Contains(userAnswer))
+            bool answerIsRight = currentGameWords.Contains(userAnswer);
+
+            // If answer is right then remove the word from the list
+            if (answerIsRight)
             {
                 currentGameWords.RemoveAt(currentGameWords.IndexOf(userAnswer));
-                updateGameData(true);
-                return true;
-            }
-            else
-            {
-                for (int i = 0; i < currentLevel; i++)
-                {
-                    // If the word is from previous levels then return true but do
-                    // update the score.
-                    if (level[i].levelWords.Contains(userAnswer))
-                    {
-                        return true;
-                    }
-                }
             }
 
-            // The user got an answer wrong to update the score accordingly
-            updateGameData(false);
-            return false;
+            // Update score and return result to the caller
+            updateGameData(answerIsRight);
+            return answerIsRight;
         }
 
         private void updateGameData(bool answerIsCorrect)
@@ -125,6 +114,7 @@ namespace WordsOfLife
             }
             else
             {
+                // TODO: Half the score instead of setting it to zero
                 userScore = 0;
             }
 

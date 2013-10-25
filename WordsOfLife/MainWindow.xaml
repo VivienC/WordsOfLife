@@ -7,7 +7,7 @@
         ResizeMode="CanMinimize" 
         FontStretch="Condensed" 
         TabIndex="1">
-    <Grid ShowGridLines="False">
+    <Grid ShowGridLines="False">            
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width= "Auto"/>
             <ColumnDefinition Width="*"/>
@@ -27,7 +27,7 @@
                HorizontalAlignment="Stretch"                
                Stretch="Fill" 
                VerticalAlignment="Stretch" />
-        <Label Content="Level"
+        <Label Content="Level: "
                Name="levelLabel" 
                Grid.Column="0"
                Grid.Row ="0"

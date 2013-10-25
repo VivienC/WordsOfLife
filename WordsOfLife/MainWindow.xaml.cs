@@ -22,7 +22,9 @@ namespace WpfApplication1
     public partial class MainWindow : Window
     {
         GameMechanics gameMechanics = new GameMechanics();
-
+        IntToLevelStringConverter intToLevelStringConv = new IntToLevelStringConverter();
+        Binding myBinding = new Binding();
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -31,6 +33,13 @@ namespace WpfApplication1
             
             // User should be able to start typing straight away
             userInput.Focus();
+
+            // Set up the binding for the level label
+            myBinding.Source = gameMechanics;
+            myBinding.Converter = intToLevelStringConv;
+            myBinding.Path = new PropertyPath("currentLevel");
+            levelLabel.SetBinding(Label.ContentProperty, myBinding);
+            
         }
 
         private void userInputEvent(object sender, TextChangedEventArgs e)
@@ -45,8 +54,7 @@ namespace WpfApplication1
             // Check that the submitted asnwer is correct
             if (gameMechanics.isAnswerRight(userInput.Text.Replace(" ", "")))
             {
-                wordLabel.Content = gameMechanics.getWord();
-                
+                wordLabel.Content = gameMechanics.getWord();                
             }
 
             userInput.Clear();
@@ -58,7 +66,7 @@ namespace WpfApplication1
     // "Level: " and the number. GameMechanics level is zero-based, 
     // so add or subtract 1 as appropriate.
     [ValueConversion(typeof(int), typeof(String))]
-    public class intToLevelStringConverter : IValueConverter
+    public class IntToLevelStringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
