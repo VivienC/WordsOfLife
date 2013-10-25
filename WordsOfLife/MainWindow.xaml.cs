@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Globalization;
 using WordsOfLife;
 
 namespace WpfApplication1
@@ -27,6 +28,8 @@ namespace WpfApplication1
             InitializeComponent();
 
             wordLabel.Content = gameMechanics.getWord();
+            
+            // User should be able to start typing straight away
             userInput.Focus();
         }
 
@@ -48,6 +51,26 @@ namespace WpfApplication1
 
             userInput.Clear();
 
+        }
+    }
+
+    [ValueConversion(typeof(int), typeof(String))]
+    public class intToLevelStringConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return "Level: " + ((int)value + 1);
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            // Leave only the level number
+            string valueString = ((string)value).Replace("Level: ", "");
+
+            // Convert from string to integer
+            int result = 0;
+            int.TryParse(valueString, out result);
+            return result;
         }
     }
 }
