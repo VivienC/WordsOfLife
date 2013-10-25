@@ -12,9 +12,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Globalization;
-using WordsOfLife;
 
-namespace WpfApplication1
+namespace WordsOfLife
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

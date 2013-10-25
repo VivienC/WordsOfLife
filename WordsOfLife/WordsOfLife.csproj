@@ -8,7 +8,7 @@
     <ProjectGuid>{3EB38A1E-1D4C-4F51-A37A-2DCAE41AB94F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WpfApplication1</RootNamespace>
+    <RootNamespace>WordsOfLife</RootNamespace>
     <AssemblyName>WordsOfLife</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -63,6 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GameDictionary.cs" />
     <Compile Include="GameMechanics.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
